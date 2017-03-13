@@ -1,0 +1,6 @@
+/*
+!src
+!.gitignore
+!README*
+!setup.py
+*__pycache__
