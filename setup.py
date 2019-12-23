@@ -1,13 +1,14 @@
-import src
-from src.egg import Egg
+import setuptools
 
-egg = Egg()
-egg.loadLongDescription('README')
-egg.pickPackage('lai', 'src')
-egg.lay(
+with open('readme.md', 'r') as reader:
+    long_description = reader.read()
+
+setuptools.setup(
     name='lai',
-    version=src.__version__,
-    description='in order to lay python egg',
+    version='2019.0.1',
+    description='yet a python demo',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     url='https://github.com/chaosannals/lai',
     keywords='lai python package egg',
     license='MIT',
@@ -22,9 +23,16 @@ egg.lay(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6'
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+    ],
+    packages=setuptools.find_packages(),
+    install_requires=[
+        'imagehash',
+        'scipy',
+        'vptree',
     ],
     include_package_data=True,
-    zip_safe=True,
     platforms='any'
 )
